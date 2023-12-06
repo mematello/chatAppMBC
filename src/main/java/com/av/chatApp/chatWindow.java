@@ -46,13 +46,13 @@ public class chatWindow extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chatwindo);
+        setContentView(R.layout.activity_chatwindow);
         getSupportActionBar().hide();
         database = FirebaseDatabase.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
 
-        reciverName = getIntent().getStringExtra("nameeee");
-        reciverimg = getIntent().getStringExtra("reciverImg");
+        reciverName = getIntent().getStringExtra("name");
+        reciverimg = getIntent().getStringExtra("receiverImg");
         reciverUid = getIntent().getStringExtra("uid");
 
         messagesArrayList = new ArrayList<>();

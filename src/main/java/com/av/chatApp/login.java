@@ -59,16 +59,16 @@ public class login extends AppCompatActivity {
 
                 if ((TextUtils.isEmpty(Email))) {
                     progressDialog.dismiss();
-                    Toast.makeText(login.this, "Enter The Email", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(login.this, "Enter an email", Toast.LENGTH_SHORT).show();
                 } else if (TextUtils.isEmpty(pass)) {
                     progressDialog.dismiss();
-                    Toast.makeText(login.this, "Enter The Password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(login.this, "Enter a password", Toast.LENGTH_SHORT).show();
                 } else if (!Email.matches(emailPattern)) {
                     progressDialog.dismiss();
-                    email.setError("Give Proper Email Address");
+                    email.setError("Invalid email address");
                 } else if (password.length() < 6) {
                     progressDialog.dismiss();
-                    password.setError("More Then Six Characters");
+                    password.setError("More than six characters");
                     Toast.makeText(login.this, "Password needs to be longer than six characters", Toast.LENGTH_SHORT).show();
                 } else {
                     auth.signInWithEmailAndPassword(Email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {

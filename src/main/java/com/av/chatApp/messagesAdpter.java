@@ -25,7 +25,7 @@ public class messagesAdpter extends RecyclerView.Adapter {
     Context context;
     ArrayList<msgModelclass> messagesAdpterArrayList;
     int ITEM_SEND = 1;
-    int ITEM_RECIVE = 2;
+    int ITEM_RECEIVE = 2;
 
     public messagesAdpter(Context context, ArrayList<msgModelclass> messagesAdpterArrayList) {
         this.context = context;
@@ -92,7 +92,7 @@ public class messagesAdpter extends RecyclerView.Adapter {
         if (FirebaseAuth.getInstance().getCurrentUser().getUid().equals(messages.getSenderid())) {
             return ITEM_SEND;
         } else {
-            return ITEM_RECIVE;
+            return ITEM_RECEIVE;
         }
     }
 

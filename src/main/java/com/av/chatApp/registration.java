@@ -83,16 +83,16 @@ public class registration extends AppCompatActivity {
                 if (TextUtils.isEmpty(namee) || TextUtils.isEmpty(emaill) ||
                         TextUtils.isEmpty(Password) || TextUtils.isEmpty(cPassword)) {
                     progressDialog.dismiss();
-                    Toast.makeText(registration.this, "Please Enter Valid Information", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(registration.this, "Valid information are required", Toast.LENGTH_SHORT).show();
                 } else if (!emaill.matches(emailPattern)) {
                     progressDialog.dismiss();
-                    rg_email.setError("Type A Valid Email Here");
+                    rg_email.setError("Invalid email address");
                 } else if (Password.length() < 6) {
                     progressDialog.dismiss();
-                    rg_password.setError("Password Must Be 6 Characters Or More");
+                    rg_password.setError("Password must be 6 or more characters");
                 } else if (!Password.equals(cPassword)) {
                     progressDialog.dismiss();
-                    rg_password.setError("The Password Doesn't Match");
+                    rg_password.setError("Password does not match");
                 } else {
                     auth.createUserWithEmailAndPassword(emaill, Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
@@ -165,7 +165,7 @@ public class registration extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setType("image/*");
                 intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(intent, "Select Picture"), 10);
+                startActivityForResult(Intent.createChooser(intent, "Select an image"), 10);
             }
         });
     }

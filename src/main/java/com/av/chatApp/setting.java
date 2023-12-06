@@ -214,7 +214,7 @@ public class setting extends AppCompatActivity {
         donebut = findViewById(R.id.donebutt);
 
         progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Saing...");
+        progressDialog.setMessage("Data is being saved...");
         progressDialog.setCancelable(false);
 
         DatabaseReference reference = database.getReference().child("user").child(auth.getUid());
@@ -243,7 +243,7 @@ public class setting extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setType("image/*");
                 intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(intent, "Select Picture"), 10);
+                startActivityForResult(Intent.createChooser(intent, "Select an image"), 10);
             }
         });
 
@@ -268,13 +268,13 @@ public class setting extends AppCompatActivity {
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()) {
                                                 progressDialog.dismiss();
-                                                Toast.makeText(setting.this, "Data Is save ", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(setting.this, "Data is saved successfully!", Toast.LENGTH_SHORT).show();
                                                 Intent intent = new Intent(setting.this, MainActivity.class);
                                                 startActivity(intent);
                                                 finish();
                                             } else {
                                                 progressDialog.dismiss();
-                                                Toast.makeText(setting.this, "Some thing went romg", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(setting.this, "Something went wrong :(", Toast.LENGTH_SHORT).show();
                                             }
                                         }
                                     });
@@ -293,13 +293,13 @@ public class setting extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
                                         progressDialog.dismiss();
-                                        Toast.makeText(setting.this, "Data Is save ", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(setting.this, "Successfully saved!", Toast.LENGTH_SHORT).show();
                                         Intent intent = new Intent(setting.this, MainActivity.class);
                                         startActivity(intent);
                                         finish();
                                     } else {
                                         progressDialog.dismiss();
-                                        Toast.makeText(setting.this, "Some thing went romg", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(setting.this, "Something went wrong :(", Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             });

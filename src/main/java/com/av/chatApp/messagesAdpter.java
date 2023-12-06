@@ -1,7 +1,7 @@
 package com.av.chatApp;
 
-import static com.av.chatApp.chatwindo.reciverIImg;
-import static com.av.chatApp.chatwindo.senderImg;
+import static com.av.chatApp.chatWindow.reciverIImg;
+import static com.av.chatApp.chatWindow.senderImg;
 
 import android.app.AlertDialog;
 import android.content.Context;
